@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+    <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<style>
+    main{
+        /* width: 90%; */
+        /* grid-template-columns: repeat(1, 1fr);
+        display: flex; */
+        /* justify-content: center;
+        align-items: center; */
+
+    }
+</style>
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+
+    <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;">Challenges
+        
+    </p>
+    <main style="width: 90%;">
+        
+        <section id="activity1">
+            <h2>Challenge Activity: Measure Accuracy and Give Feedback</h2>
+            <p>
+                Enhance the <b>Virtual Art Gallery</b> by adding two key features:
+            </p>
+            <ol style="font-size: 1.4rem;">
+                <li>
+                    <b>Timed Delay:</b> The image will only change if at least <b>5 seconds</b> have passed since the last click. If the user clicks too quickly, a message will remind them to appreciate the artwork before moving on.
+                </li>
+                <li>
+                    <b>No Consecutive Repeats:</b> The newly selected image will always be different from the previous one, ensuring that the same image does not appear twice in a row.
+                </li>
+            </ol>
+            
+            <p>
+                <b>Step 1: Import the time Module</b>
+
+                <br><img src="./images/Image_46.png" style="min-width: 250px;" width="50%" alt="">
+
+
+
+                <br><br><b>Step 2: Add a Variable to Track Last Click Time</b>
+<br>Before the game loop, initialize a variable <b>last_click_time</b> with <b>time.time()</b>. This will store the time of the last mouse click.
+<br><img src="./images/Image_47.png" style="min-width: 250px;" width="50%" alt="">
+
+<br><br><b>Step 3: Store the Initially Selected Image</b>
+<br>Before the game loop, store the initially selected image in a variable called <b>previous_image</b>
+<br><img src="./images/Image_48.png" style="min-width: 250px;" width="50%" alt="">
+
+
+
+<br><br><b>Step 4: Check Click Timing</b>
+<br>Inside the MOUSEBUTTONDOWN event:
+
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>
+                    Get the current time using <b>time.time()</b> and store it in the variable <b>current_time</b>.
+                </li>
+                <li>
+                   <b> Check if less than 5 seconds have passed since the last click:</b>
+                    <ul>
+                        <li>Subtract <b>last_click_time</b> from <b>current_time</b>.</li>
+                        <li><b>If the difference is less than 5 seconds:</b> Print "Enjoy the beauty before moving ahead!" in the terminal and do not change the image.</li>
+                    </ul>
+                </li>
+                <br><img src="./images/Image_49.png" style="min-width: 250px;" width="50%" alt="">
+            </ul>
+            <p>
+                <b>Step 5: Select a New Image and Update Variables.</b>
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>If more than 5 seconds have passed since the last click:</li>
+                <ul>
+                    <li>Select a new random image and store it in <b>new_image</b>.</li>
+                    <li>Ensure the new image is not the same as <b>previous_image</b>. If it is, keep selecting another image until it is different.</li>
+                    <li>
+                        Once a valid new image is selected:
+                        <ul>
+                            <li>Update <b>previous_image</b> to <b>new_image</b>.</li>
+                            <li>Update image to <b>new_image</b>.</li>
+                            <li>Update <b>last_click_time</b> to <b>current_time</b>.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br><img src="./images/Image_50.png" style="min-width: 250px;" width="50%" alt="">
+            </ul>
+        </section>
+        
+
+ 
+    </main>
+    
+    
+    
+    
+
+    <button class="goback" onclick="window.location.href='index.html'">Go Back</button>
+    <br>
+
+    <script>
+        document.getElementById('show-answer-btn2').addEventListener('click', function() {
+        var img1 = document.getElementById('answer-img2');
+        var img3 = document.getElementById('answer-img3');
+        
+        if (img1.style.display === 'none' || img1.style.display === '') {
+            img1.style.display = 'block';
+            img3.style.display = 'block'; // Show answer-img3 as well
+            this.textContent = 'Hide Answer';
+        } else {
+            img1.style.display = 'none';
+            img3.style.display = 'none'; // Hide answer-img3 as well
+            this.textContent = 'Show Answer';
+        }
+    });
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 1; i <= 1; i++) {
+                const showAnswerBtn = document.getElementById('show-answer-btn' + i);
+                const img = document.getElementById('answer-img' + i);
+    
+                // Create the container div
+                const container = document.createElement('div');
+                container.classList.add('image-container');
+                img.parentNode.insertBefore(container, img);
+                container.appendChild(img);
+    
+                // Create the full-screen icon
+                const icon = document.createElement('span');
+                icon.classList.add('fullscreen-icon');
+                icon.innerHTML = '⛶';
+                icon.style.color = 'white'; 
+                icon.style.display = 'none'; // Initially hide the icon
+                container.appendChild(icon);
+    
+                // Event listener to show/hide image and icon
+                showAnswerBtn.addEventListener('click', function() {
+                    if (img.style.display === 'none' || img.style.display === '') {
+                        img.style.display = 'block';
+                        icon.style.display = 'block'; // Show the icon when the image is displayed
+                        this.textContent = 'Hide Code';
+                    } else {
+                        img.style.display = 'none';
+                        icon.style.display = 'none'; // Hide the icon when the image is hidden
+                        this.textContent = 'Show Code';
+                    }
+                });
+    
+                // Add full-screen functionality
+                icon.addEventListener('click', function () {
+                    openFullscreen(img.src);
+                });
+    
+                img.style.display = 'none'; // Initially hide the image
+            }
+        });
+    
+
+        function openFullscreen(imageSrc) {
+    let fullScreenWindow = window.open("");
+    fullScreenWindow.document.write(`
+        <img src="${imageSrc}" style="display: block; max-width: 100%; max-height: 100vh; margin: auto;">
+    `);
+    fullScreenWindow.document.body.style.margin = "0";
+}
+    </script>
+</body>
+</html>

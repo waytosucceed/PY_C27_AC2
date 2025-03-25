@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python -Activities</title>
+    <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+
+    <!-- <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;">Mini Activity</p> -->
+    <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;">Activity
+        
+    </p>
+    <!-- <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;">Let's consider you are building a social media app for connecting people with similar hobbies. <br>A social media app requires you to store details of registered people.</p> -->
+    <main style="width: 90%;">
+        <section id="activity1">
+            <h2>Activity 1: Virtual Art Gallery</h2>
+            <p>
+                Create a <b>Virtual Art Gallery</b> using Pygame that will display a background and a randomly selected artwork from a list and every time the user clicks on the screen, the displayed artwork will change randomly.
+
+
+                <br><br><b>Step 1: Download the Activity Template and Open it in Visual Studio Code.
+                </b>
+                <br><br><b>Step 2: Create a new file and name it main.py</b>
+                <br><img src="./images/Image_26.png" style="min-width: 250px;" width="35%" alt="">
+                <br><img src="./images/Image_27.png" style="min-width: 250px;" width="50%" alt="">
+
+
+                <br><br><b>Step 3: Import Required Modules</b>
+                <br>Import the <b>pygame</b> and <b> random</b> modules.
+                <br><img src="./images/Image_28.png" style="min-width: 250px;" width="35%" alt="">
+                <br><br><b>Step 4: Initialize Pygame</b>
+                <br>Call <b>pygame.init()</b> to initialize all Pygame modules.
+                <br><img src="./images/Image_29.png" style="min-width: 250px;" width="40%" alt="">
+                <br><br><b>Step 5: Create the Game Window</b>
+
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>Define a variable <b>WIDTH</b> and <b>HEIGHT</b> and set them to <b>800</b> and <b>600</b> respectively.
+                    <br><img src="./images/Image_30.png" style="min-width: 250px;" width="40%" alt=""></li>
+                <br><li>Create the game window using <b>pygame.display.set_mode()</b> and store it in a variable called <b>screen</b>.
+                    <br><img src="./images/Image_31.png" style="min-width: 250px;" width="40%" alt=""></li>
+                <br><li>Set the window title using <b>pygame.display.set_caption()</b>.
+                    <br><img src="./images/Image_32.png" style="min-width: 250px;" width="40%" alt=""></li>
+            </ul>
+            <p>
+                <b>Step 6: Load Images</b>
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>
+                    Load the background image using <b>pygame.image.load()</b> and store it in a variable <b>bg_img</b>.
+                    <br><img src="./images/Image_33.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li><br>
+                <li>
+                    Create a list <b>‘images’</b> that contains five images, each loaded using <b>pygame.image.load("imageX.png")</b>, where X is the image number.
+                    <br><img src="./images/Image_34.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li>
+            </ul>
+            <p>
+                <b>Step 7: Initialize Variables</b>
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>Create a boolean variable <b>running</b> and set it to <b>True</b>.
+                    <br><img src="./images/Image_35.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li><br>
+                <li>
+                    Select a random image from the images list using <b>random.choice(images)</b> and store it in a variable <b>image</b>.
+                    <br><img src="./images/Image_36.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li>
+            </ul>
+            <p>
+                <b>Step 8: Start the Game Loop</b>
+                <br>Use a while loop that runs as long as running is True.
+                <br><img src="./images/Image_37.png" width="50%" style="min-width: 250px;" alt=""></li>
+                <br><br><b>Step 9: Display the Background Image</b>
+                <br>Inside the while loop, use <b>screen.blit(bg_img, (0, 0))</b> to draw the background image at position (0, 0).
+                <br><img src="./images/Image_38.png" width="50%" style="min-width: 250px;" alt=""></li>
+
+                <br><br><b>Step 10: Display the Selected Image</b>
+                <br>Inside the while loop, use <b>screen.blit(image, (215, 143))</b> to draw the selected image at position (215, 143).
+                <br><img src="./images/Image_39.png" width="50%" style="min-width: 250px;" alt=""></li>
+
+
+
+                <br><br><b>Step 11: Handle Events</b>
+
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>
+                    Inside the while loop, iterate through all events fetched using <b>pygame.event.get()
+                        <br><img src="./images/Image_40.png" style="min-width: 250px;" width="50%" alt=""></li>
+                    </b>
+                </li><br>
+                <li>
+                    Inside for loop, If <b>event.type == pygame.QUIT</b>.
+                    <ul>
+                        <li>Set <b>running = False</b> to exit the loop when the close button is clicked.
+
+                        </li>
+                    </ul>
+                    <br><img src="./images/Image_41.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li><br>
+                <li>
+                    Inside the for loop, if <b>event.type == pygame.MOUSEBUTTONDOWN:</b>
+                    <ul>
+                        <li>
+                            Select a new random image using <b>random.choice(images)</b> and update the <b>image</b> variable.
+                        </li>
+                    </ul>
+                    <br><img src="./images/Image_42.png" style="min-width: 250px;" width="50%" alt=""></li>
+                </li>
+            </ul>
+            <p>
+                <b>Step 12: Update the Display</b>
+                <br>Inside the while loop, call <b>pygame.display.update()</b> to refresh the screen so changes appear.
+                <br><img src="./images/Image_43.png" style="min-width: 250px;" width="50%" alt=""></li>
+                
+                
+                
+                <br><br><b>Step 13: Quit the Game</b>
+                <br>After exiting the loop, call <b>pygame.quit()</b> to properly close Pygame. 
+                <br><img src="./images/Image_44.png" style="min-width: 250px;" width="50%" alt=""></li>
+            </p>
+        </section>
+
+        <!-- <section id="activity2">
+            <h2>Activity 2: Creating a package</h2>
+            <p>
+                <b>Step 1:</b> Inside your previous Class 24 folder, create a new folder named emotion_emoji.
+                <br>This folder will be your Python package.
+                <br><img  width="25%" src="./images/Image_46.png" alt="">
+
+                <br><br><b>Step 2:</b> Move emojis.py and emoji_converter.py inside emotion_emoji folder. Click ‘OK’ on the prompt that appears.
+                <br><img  width="25%" src="./images/Image_47.png" alt="">
+                <br><br><img  width="65%" src="./images/Image_48.png" alt="">
+
+
+                <br><br><b>Step 3:</b> Make emotion_emoji a Package
+                <br>Inside the emotion_emoji folder, create a new file named __init__.py.
+                <br>This file tells Python that emotional_emoji is a package.
+                <br>You can leave this file empty for now.
+                <br><img  width="30%" src="./images/Image_49.png" alt="">
+
+
+                <br><br><b>Step 4:</b> Modify emoji_converter.py
+                <br>Open emoji_converter.py.
+                <br>Remove the line where we call ask_user_for_emotion()
+                <br>Keep only the logic that converts an emotion into an emoji using the imported function.
+                <br>Save the file.
+                <br><img  width="70%" src="./images/Image_50.png" alt="">
+
+
+                <br><br><b>Step 5:</b> Create a New File (main.py)
+                <br>Inside the Class 24 folder, create a new file named main.py.
+                <br><img  width="25%" src="./images/Image_51.png" alt="">
+                <br>In this file, you will:
+
+            </p>
+            <ul style="font-size: 1.4rem;">
+                <li>Import the ask_user_for_emotion() function from emoji_converter.py as ask
+                    <br><img  width="65%" src="./images/Image_52.png" alt="">
+                </li><br>
+                <li>Use a special condition to ensure that the ask() function runs only if main.py is the main module being executed (i.e., not when imported into another file)
+                    <br><img  width="65%" src="./images/Image_53.png" alt="">
+                </li>
+                <li>Save the file.</li>
+            </ul>
+            <p>
+               <b> Step 6:</b> Run the Program
+               <br>Open main.py in VS Code.
+               <br>Click on the Run (▶) button at the top right.
+               <br>Enter an emotion when prompted and check the output.
+
+            </p>
+        </section> -->
+    
+        <!-- <section id="activity2">
+            <h2>Activity 2</h2>
+            <p>
+                You will build a Time Machine Simulator to explore the Past and Future. You write code that takes you to different years and shows exciting events from that era! 
+                <br><br>
+                Here are the things you need to do:
+                
+            </p>
+            <ul style="font-size: 1.2rem;">
+                <li>
+                    <b>Create a parent class named TimeMachine</b> with attributes year and method travel() that returns the year you are traveling to.
+                </li>
+                <li>
+                    <b>Create a child class of TimeMachine named Past</b> that overrides the travel() method of the parent class and displays the event based on the year. Here are examples of some events, feel free to add your creativity:
+                    <ul>
+                        <li>Before 1500: "Great Wall of China being built!"</li>
+                        <li>1500–1800: "Mozart is performing live!"</li>
+                        <li>After 1800: "The Industrial Revolution is starting!"</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Create a child class of TimeMachine named Future</b> that overrides the travel() method of the parent class and displays the event based on the year. Here are examples of some events, feel free to add your creativity:
+                    <ul>
+                        <li>Before 2500: "Solar-powered spaceships everywhere!"</li>
+                        <li>2500–3000: "Robots as smart as humans!"</li>
+                        <li>After 3000: "Humans are living on other planets!"</li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Create objects of Past and Future classes, pass the year as an argument, and call the travel() method.</b>
+                </li>
+               
+            </ul>
+            
+            <button class="show-answer-btn" id="show-answer-btn2">Show Code</button><br>
+            <img src="./images/2.png" class="answer-img" id="answer-img2" alt="Code example for transforming fruit names" style="max-width: 100%; display: none;">
+            <img src="./images/3.png" class="answer-img" id="answer-img3" alt="Code example for transforming fruit names" style="max-width: 100%; display: none;">
+        </section> -->
+    
+        
+    </main>
+    
+    
+    
+        
+     <br>
+
+    <button class="challenge-btn" onclick="window.location.href='challenges.html'">Challenges</button>
+<br> <br>
+<script>
+     document.getElementById('show-answer-btn1').addEventListener('click', function() {
+         var img1 = document.getElementById('answer-img1');
+         var img3 = document.getElementById('answer-img2');
+        
+         if (img1.style.display === 'none' || img1.style.display === '') {
+             img1.style.display = 'block';
+             img3.style.display = 'block'; // Show answer-img3 as well
+             this.textContent = 'Hide Answer';
+         } else {
+             img1.style.display = 'none';
+             img3.style.display = 'none'; // Hide answer-img3 as well
+             this.textContent = 'Show Answer';
+        }
+    });
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     for (let i = 1; i <= 1; i++) {
+    //         const showAnswerBtn = document.getElementById('show-answer-btn' + i);
+    //         const img = document.getElementById('answer-img' + i);
+
+    //         // Create the container div
+    //         const container = document.createElement('div');
+    //         container.classList.add('image-container');
+    //         img.parentNode.insertBefore(container, img);
+    //         container.appendChild(img);
+
+    //         // Create the full-screen icon
+    //         const icon = document.createElement('span');
+    //         icon.classList.add('fullscreen-icon');
+    //         icon.innerHTML = '⛶';
+    //         icon.style.color = 'white'; 
+    //         icon.style.display = 'none'; // Initially hide the icon
+    //         container.appendChild(icon);
+
+    //         // Event listener to show/hide image and icon
+    //         showAnswerBtn.addEventListener('click', function() {
+    //             if (img.style.display === 'none' || img.style.display === '') {
+    //                 img.style.display = 'block';
+    //                 icon.style.display = 'block'; // Show the icon when the image is displayed
+    //                 this.textContent = 'Hide Code';
+    //             } else {
+    //                 img.style.display = 'none';
+    //                 icon.style.display = 'none'; // Hide the icon when the image is hidden
+    //                 this.textContent = 'Show Code';
+    //             }
+    //         });
+
+    //         // Add full-screen functionality
+    //         icon.addEventListener('click', function () {
+    //             openFullscreen(img.src);
+    //         });
+
+    //         img.style.display = 'none'; // Initially hide the image
+    //     }
+    // });
+
+
+    // function openFullscreen(imageSrc) {
+    //     let fullScreenWindow = window.open("");
+    //     fullScreenWindow.document.write(`<img src="${imageSrc}" style="width: 100%; height: auro;">`);
+    //     fullScreenWindow.document.body.style.margin = "0";
+    //     fullScreenWindow.document.body.style.overflow = "hidden";
+    // }
+    function openFullscreen(imageSrc) {
+    let fullScreenWindow = window.open("");
+    fullScreenWindow.document.write(`
+        <img src="${imageSrc}" style="display: block; max-width: 100%; max-height: 100vh; margin: auto;">
+    `);
+    fullScreenWindow.document.body.style.margin = "0";
+}
+
+</script>
+
+
+</body>
+</html>
